@@ -38,7 +38,7 @@ def test_solve_raise_zero_division_error() -> None:
 def test_solve_raise_type_error(a: Any, b: Any, c: Any) -> None:
 	""" raise TypeError """
 	with pytest.raises(TypeError):
-		solve(a=1.0, b=2.0, c="1.0")  # type: ignore
+		solve(a=a, b=b, c=c)  # type: ignore
 	
 	
 def test_solve_discriminant_was_less_than_the_specified_epsilon() -> None:
