@@ -1,5 +1,9 @@
+import sys
 import math
 from decimal import Decimal
+
+epsilon = sys.float_info.epsilon
+zero = Decimal(0)
 
 
 def solve(a: float, b: float, c: float) -> list[float]:
@@ -11,15 +15,17 @@ def solve(a: float, b: float, c: float) -> list[float]:
 	:return: Корни квадратного уравнения
 	"""
 	
-	discriminant = Decimal(b ** 2 - 4 * a * c)
-
-	if discriminant > Decimal(0):
-		root_1 = (-b + math.sqrt(discriminant)) / (2 * a)
-		root_2 = (-b - math.sqrt(discriminant)) / (2 * a)
-		return [root_1, root_2]
-	elif discriminant == Decimal(0):
-		x = -b / (2 * a)
-		return [x]
+	if a == zero:
+		raise ZeroDivisionError
+	
+	discriminant = b ** 2 - 4 * a * c
+	if math.isclose(discriminant, 0, rel_tol=epsilon, abs_tol=epsilon):
+		return [-b / (2 * a)]
+	elif discriminant > -epsilon:
+		sqrt_discriminant = math.sqrt(discriminant)
+		x1 = (-b + sqrt_discriminant) / (2 * a)
+		x2 = (-b - sqrt_discriminant) / (2 * a)
+		return [x1, x2]
 	else:
 		return []
 
