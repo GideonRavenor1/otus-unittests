@@ -13,15 +13,15 @@ sorted_array = [
 def test_sort_factories():
     # Тест для фабрики сортировки выбором
     factory = SelectionSortFactory()
-    sorter = factory.create_sort()
+    sorter = factory.create()
     assert sorter.execute(array) == sorted_array
     
     # Тест для фабрики сортировки вставками
     factory = InsertionSortFactory()
-    sorter = factory.create_sort()
+    sorter = factory.create()
     assert sorter.execute(array) == sorted_array
     
     # Тест для фабрики сортировки слиянием
     factory = MergeSortFactory()
-    sorter = factory.create_sort()
+    sorter = factory.create()
     assert sorter.execute(array) == sorted_array

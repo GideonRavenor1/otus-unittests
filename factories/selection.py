@@ -3,5 +3,5 @@ from sorting_algorithms.selection import SelectionSort
 
 
 class SelectionSortFactory(SortFactory):
-    def create_sort(self) -> SelectionSort:
+    def create(self) -> SelectionSort:
         return SelectionSort()

@@ -3,5 +3,5 @@ from sorting_algorithms.insert import InsertionSort
 
 
 class InsertionSortFactory(SortFactory):
-    def create_sort(self) -> InsertionSort:
+    def create(self) -> InsertionSort:
         return InsertionSort()

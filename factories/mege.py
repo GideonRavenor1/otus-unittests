@@ -3,5 +3,5 @@ from sorting_algorithms.merge import MergeSort
 
 
 class MergeSortFactory(SortFactory):
-    def create_sort(self) -> MergeSort:
+    def create(self) -> MergeSort:
         return MergeSort()
