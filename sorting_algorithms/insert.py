@@ -10,4 +10,6 @@ class InsertionSort(BaseSortAlgorithm):
                 arr[j + 1] = arr[j]
                 j -= 1
             arr[j + 1] = key
+        
+        self._arr = arr
         return arr

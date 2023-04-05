@@ -9,4 +9,6 @@ class SelectionSort(BaseSortAlgorithm):
                 if arr[min_idx] > arr[j]:
                     min_idx = j
             arr[i], arr[min_idx] = arr[min_idx], arr[i]
+        
+        self._arr = arr
         return arr

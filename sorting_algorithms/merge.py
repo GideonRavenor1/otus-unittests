@@ -28,4 +28,6 @@ class MergeSort(BaseSortAlgorithm):
                 arr[k] = R[j]
                 j += 1
                 k += 1
+        
+        self._arr = arr
         return arr
