@@ -4,7 +4,7 @@ from managers.file import FileManager
 
 
 class BaseSortAlgorithm(ABC):
-    manager = FileManager()
+    __manager = FileManager()
     
     def __init__(self) -> None:
         self._arr = []
@@ -14,7 +14,7 @@ class BaseSortAlgorithm(ABC):
         raise NotImplementedError
     
     def read(self, filename: str) -> list[int]:
-        return self.manager.read(filename)
+        return self.__manager.read(filename)
     
     def write(self, filename: str) -> None:
-        self.manager.write(filename, self._arr)
+        self.__manager.write(filename, self._arr)

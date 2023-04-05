@@ -1,6 +1,16 @@
 from collections.abc import Generator
 
+import pytest
+
 from factories import InsertionSortFactory, MergeSortFactory, SelectionSortFactory
+
+
+def test_sort_file_not_exist():
+    factory = SelectionSortFactory()
+    sorter = factory.create()
+    
+    with pytest.raises(FileNotFoundError):
+        sorter.read("missing_file.txt")
 
 
 def test_selection_sort(
