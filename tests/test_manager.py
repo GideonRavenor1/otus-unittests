@@ -28,7 +28,7 @@ def test_write_array_to_file(
     _, output_path = paths_to_files
     FileManager.write(output_path, array)
     
-    with open(output_path) as file:
+    with open(output_path, encoding="utf-8") as file:
         assert list(map(int, file.read().split())) == array
 
 
