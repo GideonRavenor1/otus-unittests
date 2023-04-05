@@ -8,7 +8,7 @@ class FileManager:
         if not os.path.exists(filename):
             raise FileNotFoundError(f'File {filename} not found')
         
-        with open(filename) as f:
+        with open(filename, "r", encoding="utf-8" ) as f:
             arr = f.readline().strip().split()
             return [int(x) for x in arr]
     
