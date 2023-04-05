@@ -23,7 +23,7 @@ def sorted_array() -> list[int]:
 def paths_to_files(array: list[int]) -> Generator[tuple[str, str], None, None]:
     input_path = "input.txt"
     output_path = "output.txt"
-    with open(input_path, "w") as f:
+    with open(input_path, "w", encoding="utf_8") as f:
         f.write(" ".join(map(str, array)))
 
     yield input_path, output_path
