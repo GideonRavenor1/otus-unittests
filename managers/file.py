@@ -14,6 +14,6 @@ class FileManager:
     
     @staticmethod
     def write(filename: str, arr: list[int]) -> None:
-        with open(filename, 'w') as f:
+        with open(filename, 'w', encoding='utf_8') as f:
             f.write(' '.join(map(str, arr)))
     
