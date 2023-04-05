@@ -29,7 +29,7 @@ def test_selection_sort(
     assert sorter.execute(array) == sorted_array
     
     sorter.write(output_path)
-    with open(output_path) as file:
+    with open(output_path, "r", encoding="utf-8") as file:
         assert list(map(int, file.read().split())) == sorted_array
 
 
@@ -49,7 +49,7 @@ def test_insertion_sort(
     assert sorter.execute(array) == sorted_array
     
     sorter.write(output_path)
-    with open(output_path) as file:
+    with open(output_path, "r", encoding="utf-8") as file:
         assert list(map(int, file.read().split())) == sorted_array
     
    
@@ -69,5 +69,5 @@ def test_merge_sort(
     assert sorter.execute(array) == sorted_array
     
     sorter.write(output_path)
-    with open(output_path) as file:
+    with open(output_path, "r", encoding="utf-8") as file:
         assert list(map(int, file.read().split())) == sorted_array
