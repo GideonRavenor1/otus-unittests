@@ -4,6 +4,8 @@ from services.add import MatrixAdderFileWriterService
 
 
 class AdderGeneratorServiceAdapter:
+    generator: type[MatrixGeneratorFileWriterService] = MatrixGeneratorFileWriterService
+    adder: type[MatrixAdderFileWriterService] = MatrixAdderFileWriterService
     
     def __init__(self, input_file: str, output_file: str, matrix: IMatrix) -> None:
         self.input_file = input_file
@@ -11,11 +13,11 @@ class AdderGeneratorServiceAdapter:
         self.matrix = matrix
         
     def __call__(self) -> None:
-        MatrixGeneratorFileWriterService(
+        self.generator(
             output_file=self.input_file,
             matrix=self.matrix
         )()
-        MatrixAdderFileWriterService(
+        self.adder(
             input_file=self.input_file,
             output_file=self.output_file,
             matrix=self.matrix
