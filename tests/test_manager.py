@@ -128,7 +128,7 @@ def test_add_raises_exception_if_matrices_have_different_shapes():
 
 def test_from_file_returns_list_of_matrices():
     filename = "test.txt"
-    with open(filename, "w") as file:
+    with open(filename, "w", encoding="utf_8") as file:
         file.write("2 2\n1.0 2.0\n3.0 4.0\n2 2\n5.0 6.0\n7.0 8.0\n")
 
     matrix = Matrix(2, 2)
