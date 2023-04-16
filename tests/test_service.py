@@ -33,7 +33,7 @@ class TestMatrixAdderFileWriterService:
 
     def test_from_file_raises_error_when_file_has_wrong_format(self, tmp_path):
         file = tmp_path / "test.txt"
-        with open(file, "w") as f:
+        with open(file, "w", encoding="utf_8") as f:
             f.write("not a matrix")
         service = MatrixAdderFileWriterService(
             input_file=file,
