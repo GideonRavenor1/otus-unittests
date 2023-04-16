@@ -42,7 +42,7 @@ class MatrixFileManager:
     
     @staticmethod
     def to_file(filename: str, matrix: IMatrix) -> None:
-        with open(filename, "a") as file:
+        with open(filename, "a", encoding="utf_8") as file:
             file.write(f"{matrix.rows} {matrix.cols}\n")
             for row in matrix.data:
                 file.write(" ".join(str(e) for e in row) + "\n")
